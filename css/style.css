@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  height: 300px;
+  display: block;
+  background-color: #808;
+  background-image:url(../back.jpg);
+}
+.control-buttons {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(26, 113, 154, 0.9);
+}
+/* .control-buttons span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f44336;
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+} */
+.button{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position:relative;
+  display:inline-block;
+  margin:50px 0 0 0;
+}
+
+.button a{
+  color:white;
+  font-family:Helvetica, sans-serif;
+  font-weight:bold;
+  font-size:36px;
+  text-align: center;
+  text-decoration:none;
+  background-color:#FFA12B;
+  display:block;
+  position:relative;
+  padding:20px 40px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-shadow: 0px 1px 0px #000;
+  filter: dropshadow(color=#000, offx=0px, offy=1px);
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+  box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.button a:active{
+  top:10px;
+  background-color:#F78900;
+  
+  -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+  box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+}
+
+.button:after{
+  content:"";
+  height:100%;
+  width:100%;
+  padding:4px;
+  position: absolute;
+  bottom:-15px;
+  left:-4px;
+  z-index:-1;
+  background-color:#2B1800;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* /////////////////// */
+.info-container {
+  width: 1080px;
+  margin: 20px auto 0;
+  background-color: transparent;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px dashed rgb(167, 184, 188);
+  color: white;
+}
+h4{
+  padding: 0;
+  margin: 0;
+}
+/* .info-container .name {
+  float: left;
+
+}
+.info-container .tries {
+  float: right;
+
+  text-align: right;
+} */
+.memory-game-blocks {
+  display: flex;
+  width: 1100px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+.memory-game-blocks.no-clicking {
+  pointer-events: none;
+}
+.memory-game-blocks .game-block {
+  height: 200px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex: 1 0 200px;
+  margin: 0 10px 20px;
+}
+.memory-game-blocks .game-block .front {
+  background-color: transparent;
+  line-height: 200px;
+  background-image: url(../عادل\ شكل.jpg);
+  background-size: 90% 90%;
+  background-repeat: no-repeat;
+  background-position: 50% , 5%;
+ 
+  
+}
+.memory-game-blocks .game-block .front:before {
+  content: "";
+
+  color: #fff;
+  font-size: 140px;
+  font-weight: bold;
+}
+.memory-game-blocks .game-block .back {
+  /* background-color: #607d8b; */
+  transform: rotateY(180deg);
+  background-color: transparent;
+}
+.memory-game-blocks .game-block .back img {
+  width: 90%;
+  height: 90%;
+  margin-top: 30px;
+  position: relative;
+  top: -10%;
+}
+.memory-game-blocks .game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  border: 3px dashed rgb(167, 184, 188);
+}
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
